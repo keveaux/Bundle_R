@@ -46,6 +46,7 @@ class SendToManyActivity : AppCompatActivity() {
 
         val amount = arrayOf("99", "499", "500", "999", "1000", "1999", "2000", "2999", "3000", "5000", "9999")
 
+
         val spin = findViewById<Spinner>(R.id.spinner_amount) as Spinner
         editText_pnos = findViewById<EditText>(R.id.editText_pnos)
         val phone_numbers_rv = findViewById<RecyclerView>(R.id.phone_numbers_rv)
