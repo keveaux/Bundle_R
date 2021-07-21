@@ -36,11 +36,6 @@ class BlankSetupHoverActivity : Activity() {
         setContentView(R.layout.activity_blank_setup_hover)
 
 //        smsServiceIntent= Intent(applicationContext, FetchSuccessSMSService::class.java)
-
-
-
-
-
     }
 
 
@@ -97,73 +92,33 @@ class BlankSetupHoverActivity : Activity() {
 
 
             when (amount) {
-                "499" -> {
+                "550" -> {
                     amount_choice_one = "6"
-                    amount_choice_two = "2"
                 }
-                "500" -> {
-                    amount_choice_one = "6"
-                    amount_choice_two = "1"
-                }
-                "998" -> {
+                "1050" -> {
                     amount_choice_one = "1"
-                    amount_choice_two = "1"
                 }
-                "999" -> {
-                    amount_choice_one = "1"
-                    amount_choice_two = "2"
-                }
-                "1000" -> {
-                    amount_choice_one = "1"
-                    amount_choice_two = "3"
-                }
-                "1998" -> {
+                "2100" -> {
                     amount_choice_one = "2"
-                    amount_choice_two = "1"
                 }
-                "1999" -> {
-                    amount_choice_one = "2"
-                    amount_choice_two = "2"
-                }
-                "2000" -> {
-                    amount_choice_one = "2"
-                    amount_choice_two = "3"
-                }
-                "2998" -> {
+                "3150" -> {
                     amount_choice_one = "3"
-                    amount_choice_two = "1"
                 }
-                "2999" -> {
-                    amount_choice_one = "3"
-                    amount_choice_two = "2"
-                }
-                "3000" -> {
-                    amount_choice_one = "3"
-                    amount_choice_two = "3"
-                }
-                "4999" -> {
+                "5200" -> {
                     amount_choice_one = "4"
-                    amount_choice_two = "1"
                 }
-                "5000" -> {
-                    amount_choice_one = "4"
-                    amount_choice_two = "2"
-                }
-                "9999" -> {
+                "10430" -> {
                     amount_choice_one = "5"
-                    amount_choice_two = "1"
                 }
-                "10000" -> {
-                    amount_choice_one = "5"
-                    amount_choice_two = "2"
-                }
+
+
             }
             setUpHoverSdk()
         }
 
 
     private fun setUpHoverSdk() {
-        if (amount?.toInt() == 499 || amount?.toInt() == 500 || amount?.toInt() == 999 || amount?.toInt() == 1000 || amount?.toInt() == 1999 || amount?.toInt() == 2000 || amount?.toInt() == 2999 || amount?.toInt() == 3000 || amount?.toInt() == 5000 || amount?.toInt() == 9999 || amount?.toInt() == 99) {
+        if (amount?.toInt() == 499 || amount?.toInt() == 550 || amount?.toInt() == 1050 || amount?.toInt() == 2100 || amount?.toInt() == 3150 || amount?.toInt() == 5200 || amount?.toInt() == 10430 || amount?.toInt() == 99) {
             if (amount?.toInt() == 99) {
                 val i = HoverParameters.Builder(Objects.requireNonNull(applicationContext))
                         .request("08aa4775")
@@ -186,7 +141,6 @@ class BlankSetupHoverActivity : Activity() {
                         .showUserStepDescriptions(false)
                         .extra("number", last_number) // Only if your action has variables
                         .extra("choiceOne", amount_choice_one)
-                        .extra("choiceTwo", amount_choice_two)
                         .buildIntent()
                 startActivityForResult(i, 0)
             }

@@ -93,96 +93,40 @@ public class USSDAutomationActivity extends AppCompatActivity {
         switch (amount) {
 
 
-            case "499":
+            case "550":
                 amount_choice_one = "6";
-                amount_choice_two = "2";
                 break;
 
-            case "500":
-                amount_choice_one = "6";
-                amount_choice_two = "1";
-
-                break;
-
-            case "998":
+            case "1050":
                 amount_choice_one = "1";
-                amount_choice_two = "1";
 
                 break;
 
-            case "999":
-                amount_choice_one = "1";
-                amount_choice_two = "2";
-                break;
-
-            case "1000":
-                amount_choice_one = "1";
-                amount_choice_two = "3";
-
-                break;
-
-            case "1998":
+            case "2100":
                 amount_choice_one = "2";
-                amount_choice_two = "1";
 
                 break;
 
-            case "1999":
-                amount_choice_one = "2";
-                amount_choice_two = "2";
-                break;
-
-            case "2000":
-                amount_choice_one = "2";
-                amount_choice_two = "3";
-
-                break;
-
-            case "2998":
+            case "3150":
                 amount_choice_one = "3";
-                amount_choice_two = "1";
-
                 break;
 
-            case "2999":
-                amount_choice_one = "3";
-                amount_choice_two = "2";
-                break;
-
-            case "3000":
-                amount_choice_one = "3";
-                amount_choice_two = "3";
-
-                break;
-
-            case "4999":
+            case "5200":
                 amount_choice_one = "4";
-                amount_choice_two = "1";
 
                 break;
 
-            case "5000":
-                amount_choice_one = "4";
-                amount_choice_two = "2";
-
-                break;
-
-            case "9999":
+            case "10430":
                 amount_choice_one = "5";
-                amount_choice_two = "1";
 
                 break;
 
-            case "10000":
-                amount_choice_one = "5";
-                amount_choice_two = "2";
 
-                break;
+
         }
 
-        if (Integer.parseInt(amount) == 499 || Integer.parseInt(amount) == 500 || Integer.parseInt(amount) == 999 || Integer.parseInt(amount) == 1000
-                || Integer.parseInt(amount) == 1999 || Integer.parseInt(amount) == 2000 || Integer.parseInt(amount) == 2999 || Integer.parseInt(amount) == 3000
-                || Integer.parseInt(amount) == 5000 || Integer.parseInt(amount) == 9999 || Integer.parseInt(amount) == 99) {
+        if (Integer.parseInt(amount) == 499 || Integer.parseInt(amount) == 550 || Integer.parseInt(amount) == 1050 || Integer.parseInt(amount) == 2100
+                || Integer.parseInt(amount) == 3150 || Integer.parseInt(amount) == 5200 || Integer.parseInt(amount) == 99) {
 
             if(Integer.parseInt(amount) == 99){
                 Intent i = new HoverParameters.Builder(USSDAutomationActivity.this)
@@ -206,7 +150,6 @@ public class USSDAutomationActivity extends AppCompatActivity {
                         .showUserStepDescriptions(false)
                         .extra("number", last_number) // Only if your action has variables
                         .extra("choiceOne", amount_choice_one)
-                        .extra("choiceTwo", amount_choice_two)
                         .buildIntent();
                 startActivityForResult(i, 0);
             }

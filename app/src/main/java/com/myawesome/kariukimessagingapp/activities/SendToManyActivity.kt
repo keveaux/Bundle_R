@@ -44,7 +44,7 @@ class SendToManyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_send_to_many)
 
-        val amount = arrayOf("99", "499", "500", "999", "1000", "1999", "2000", "2999", "3000", "5000", "9999")
+        val amount = arrayOf("99", "499", "550", "1050", "2100", "3150", "5200", "10430")
 
 
         val spin = findViewById<Spinner>(R.id.spinner_amount) as Spinner
@@ -89,8 +89,10 @@ class SendToManyActivity : AppCompatActivity() {
             } else {
 
 
+
                 phone_number = editText_pnos.text.toString()
                 phone_number=phone_number.replace("\\s".toRegex(), "")
+
 
                 if(phone_number.contains(",")){
 
@@ -191,6 +193,11 @@ class SendToManyActivity : AppCompatActivity() {
                                 null, null)
                         phones.moveToFirst()
                         cNumber = phones.getString(phones.getColumnIndex("data1"))
+
+                        val regex = """(254)""".toRegex()
+                        cNumber = regex.replace(cNumber, "0")
+                        cNumber=cNumber.drop(1)
+
 
                         if (editText_pnos.text.isEmpty()) {
 
